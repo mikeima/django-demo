@@ -1,3 +1,12 @@
+# MariaDB
+
+1. Устанавливаем docker и docker-compose
+>*sudo apt install docker.io docker-compose*
+2. Создаем и запускаем docker-контейнер
+>*cd ci/mariadb\
+docker-compose up -d*
+
+
 # django-demo
 
 1. Создаем виртуальное окружение

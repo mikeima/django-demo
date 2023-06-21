@@ -1,3 +1,4 @@
 .idea/
 __pycache__/
+ci/mariadb/data/
 db.sqlite3
