@@ -7,7 +7,8 @@ class Format(models.Model):
         verbose_name_plural = 'Форматы'
 
     code = models.CharField(max_length=25,
-                            verbose_name='Код Формат')
+                            verbose_name='Код Формат',
+                            unique = True)
     format = models.CharField(max_length=25,
                               verbose_name='Формат',
                               null=True)
@@ -25,7 +26,8 @@ class Material(models.Model):
         verbose_name_plural = 'Типы сырья'
 
     code = models.CharField(max_length=25,
-                            verbose_name='Код Тип сырья')
+                            verbose_name='Код Тип сырья',
+                            unique=True)
     material_type = models.CharField(max_length=25,
                                      verbose_name='Тип сырья',
                                      null=True)
@@ -40,7 +42,8 @@ class Producer(models.Model):
         verbose_name_plural = 'Поставщики'
 
     code = models.CharField(max_length=25,
-                            verbose_name='Код Поставщик')
+                            verbose_name='Код Поставщик',
+                            unique=True)
     producer = models.CharField(max_length=25,
                                 verbose_name='Поставщик',
                                 null=True)
@@ -55,7 +58,8 @@ class K_B(models.Model):
         verbose_name_plural = 'К/Б'
 
     code = models.CharField(max_length=25,
-                            verbose_name='Код К/Б')
+                            verbose_name='Код К/Б',
+                            unique=True)
     name = models.CharField(max_length=25,
                             verbose_name='Название',
                             null=True)
@@ -73,7 +77,8 @@ class Grammage(models.Model):
         verbose_name_plural = 'Граммаж'
 
     code = models.CharField(max_length=25,
-                            verbose_name='Код Граммаж')
+                            verbose_name='Код Граммаж',
+                            unique=True)
     grammage = models.CharField(max_length=25,
                                 verbose_name='Граммаж',
                                 null=True)
@@ -87,7 +92,8 @@ class Ozm(models.Model):
         verbose_name = 'ОЗМ'
         verbose_name_plural = 'ОЗМ'
 
-    code = models.IntegerField(verbose_name='Код ОЗМ')
+    code = models.IntegerField(verbose_name='Код ОЗМ',
+                               unique=True)
     ozm = models.CharField(max_length=25,
                            verbose_name='ОЗМ',
                            null=True)
@@ -113,7 +119,8 @@ class IncomeDateTime(models.Model):
         verbose_name = 'Дата поступления'
         verbose_name_plural = 'Даты поступления'
 
-    code = models.IntegerField(verbose_name='Код Дата поступления')
+    code = models.IntegerField(verbose_name='Код Дата поступления',
+                               unique=True)
     income_datetime = models.DateTimeField(verbose_name='Дата поступления',
                                            null=True)
     shift_number = models.CharField(max_length=25,
@@ -129,7 +136,8 @@ class T13_050(models.Model):
         verbose_name = '13/050'
         verbose_name_plural = '13/050'
 
-    code = models.IntegerField(verbose_name='Код 13/050')
+    code = models.IntegerField(verbose_name='Код 13/050',
+                               unique=True)
     f13_050 = models.CharField(max_length=25,
                                verbose_name='13/050',
                                null=True)
@@ -148,7 +156,8 @@ class Invoice(models.Model):
         verbose_name_plural = 'Накладные'
 
     code = models.CharField(max_length=255,
-                            verbose_name='Код Накладная')
+                            verbose_name='Код Накладная',
+                            unique=True)
     code13_050 = models.IntegerField(verbose_name='Код 13/050',
                                      null=True)
     pole1 = models.CharField(max_length=255,
@@ -165,7 +174,8 @@ class Roll(models.Model):
         verbose_name_plural = 'Рулоны'
 
     roll_number = models.CharField(max_length=25,
-                                   verbose_name='Код № Рулона')
+                                   verbose_name='Код № Рулона',
+                                   unique=True)
     roll_weight = models.IntegerField(verbose_name='Вес нетто/брутто',
                                       null=True)
     k_b = models.CharField(max_length=25,
@@ -220,7 +230,8 @@ class ConsumptionDateTime(models.Model):
         verbose_name = 'Дата расхода'
         verbose_name_plural = 'Даты расхода'
 
-    code = models.IntegerField(verbose_name='Код Дата расхода')
+    code = models.IntegerField(verbose_name='Код Дата расхода',
+                               unique=True)
     consumption_datetime = models.DateTimeField(verbose_name='Дата расхода',
                                                 null=True)
     shift_number = models.CharField(max_length=25,
@@ -248,7 +259,8 @@ class Consumption(models.Model):
         verbose_name = 'Расход'
         verbose_name_plural = 'Расход'
 
-    code = models.IntegerField(verbose_name='Код Расход')
+    code = models.IntegerField(verbose_name='Код Расход',
+                               unique=True)
     roll_number = models.CharField(max_length=25,
                                    verbose_name='Код № Рулона',
                                    null=True)
