@@ -1,8 +1,18 @@
 from django.contrib import admin
 
 from app.models import (
-    Format, Material, Producer, K_B, Grammage, Ozm, IncomeDateTime,
-    T13_050, Invoice, Roll, ConsumptionDateTime, Consumption
+    Format,
+    Material,
+    Producer,
+    K_B,
+    Grammage,
+    OzmWithForeignKey as Ozm,
+    IncomeDateTime,
+    T13_050WithForeignKey as T13_050,
+    InvoiceWithForeignKey as Invoice,
+    RollWithForeignKey as Roll,
+    ConsumptionDateTime,
+    ConsumptionWithForeignKey as Consumption
 )
 
 
