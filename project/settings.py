@@ -151,3 +151,19 @@ DEBUG_TOOLBAR_PANELS = [
     'debug_toolbar.panels.redirects.RedirectsPanel',
     'debug_toolbar.panels.profiling.ProfilingPanel',
 ]
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'loggers': {
+        'default': {
+            'level': 'DEBUG',
+            'handlers': ['console'],
+        }
+    },
+}
